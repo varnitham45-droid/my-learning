@@ -1,0 +1,166 @@
+for i in range(1, 51):
+    if i % 3 == 0 and i % 5 == 0:
+        print("FizzBuzz")
+    elif i % 3 == 0:
+        print("Fizz")
+    elif i % 5 == 0:
+        print("Buzz")
+    else:
+        print(i)
+
+
+def is_leap_year(year):
+    if year % 400 == 0:
+        return True
+    elif year % 100 == 0:
+        return False
+    elif year % 4 == 0:
+        return True
+    else:
+        return False
+
+
+year = int(input("Enter year: "))
+print(is_leap_year(year))
+
+
+L1 = [1, 2, 3]
+L2 = [1, 2, 3]
+
+print(L1 == L2)
+print(L1 is L2)
+
+
+a = int(input("Enter a: "))
+b = int(input("Enter b: "))
+
+a = a ^ b
+b = a ^ b
+a = a ^ b
+
+print("a =", a)
+print("b =", b)
+
+
+count = 0
+num = 2
+
+while count < 10:
+    is_prime = True
+    i = 2
+
+    while i < num:
+        if num % i == 0:
+            is_prime = False
+            break
+        i += 1
+
+    if is_prime:
+        print(num)
+        count += 1
+
+    num += 1
+
+
+for i in range(1, 21):
+    if i % 4 == 0:
+        pass
+
+    if i == 13:
+        continue
+
+    if i == 18:
+        break
+
+    print(i)
+
+
+grade = int(input("Enter grade: "))
+
+if grade >= 90:
+    print("A")
+elif grade >= 80:
+    print("B")
+elif grade >= 70:
+    print("C")
+else:
+    print("Fail")
+
+
+num = int(input("Enter an integer: "))
+
+reverse = 0
+
+while num > 0:
+    digit = num % 10
+    reverse = reverse * 10 + digit
+    num = num // 10
+
+print("Reversed number:", reverse)
+
+
+scores = [85, 92, 78, 95, 88, 95]
+
+highest = None
+second_highest = None
+
+for score in scores:
+    if highest is None or score > highest:
+        second_highest = highest
+        highest = score
+    elif score != highest and (second_highest is None or score > second_highest):
+        second_highest = score
+
+print("Second-highest score:", second_highest)
+
+
+numbers = [1, 2, 2, 3, 4, 4, 5]
+
+unique_values = list(set(numbers))
+
+print(unique_values)
+
+
+list1 = [1, 2, 3, 4, 5]
+list2 = [3, 4, 5, 6, 7]
+
+common = []
+
+for item in list1:
+    if item in list2:
+        common.append(item)
+
+print("Common elements:", common)
+
+
+my_tuple = (10, 20, 30)
+
+try:
+    my_tuple[1] = 50
+except TypeError as e:
+    print("Error:", e)
+
+
+text = input("Enter a string: ")
+
+frequency = {}
+
+for char in text:
+    if char in frequency:
+        frequency[char] += 1
+    else:
+        frequency[char] = 1
+
+print(frequency)
+
+
+squares = [x ** 2 for x in range(1, 21) if x % 2 == 0]
+
+print(squares)
+
+
+data = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+
+result = {key: value for key, value in data.items() if value > 2}
+
+print(result)
